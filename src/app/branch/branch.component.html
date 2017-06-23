@@ -1,0 +1,10 @@
+<div class="wrapper" (click)="toggle($event)">
+  <div class="sub_wrapper">
+    <div class="subheader">Section: {{branch.index}}</div>
+    <div class="completed">{{branch.completed}} / {{branch.amount}}</div>
+  </div>
+  <div class="header" [class.open]="open">{{branch.name}}</div>
+  <div class="subject_list" [class.open]="open">
+    <subject *ngFor="let subject of branch.subjects" [subject]="subject"></subject>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <div class="search_wrapper">
+    <h2>Search for a subject</h2>
+    <input type="text" class="search" placeholder="Subject" [(ngModel)]="searchText" (keyup.enter)="search()" />
+    <div class="search_icon" (click)="search()"></div>
+  </div>
+  <div class="search_results">
+    <div class="result" *ngFor="let result of results" [routerLink]="result">
+      {{result}}
+    </div>
+  </div>
+</div>

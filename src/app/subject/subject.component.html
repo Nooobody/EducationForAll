@@ -1,0 +1,6 @@
+<div class="wrapper" (click)="setVideo($event)" [class.selected]="subject.current">
+  <img class="play" src="/assets/play.svg" />
+  <div class="header">{{subject.index}}. {{subject.name}}</div>
+  <div class="checkmark" [class.done]="subject.completed"></div>
+  <div class="currenttime">{{subject.time}}</div>
+</div>

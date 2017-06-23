@@ -1,0 +1,32 @@
+@import "../variables"
+
+.wrapper
+  width: 100%
+  height: auto
+  border: 1px solid #efefef
+  border-right: 0
+  border-top: 0
+  overflow: hidden
+  cursor: pointer
+
+.header
+  padding: 9px
+  font-weight: bold
+  &.open
+    border-bottom: 1px solid #efefef
+
+.subject_list
+  height: 0px
+  overflow: hidden
+  &.open
+    height: initial
+
+.sub_wrapper
+  padding: 9px
+  margin-bottom: 10px
+
+.subheader
+  float: left
+
+.completed
+  float: right

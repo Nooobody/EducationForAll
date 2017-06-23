@@ -1,0 +1,65 @@
+.previous_video, .next_video, .rewind, .fastforward
+  width: 50px
+  background-size: 50%
+  background-position: 50%
+  background-repeat: no-repeat
+  cursor: pointer
+  &:hover
+    background-color: #444444
+
+.previous_video
+  background-image: url("/assets/back.png")
+
+.next_video
+  background-image: url("/assets/next.png")
+
+.rewind
+  background-image: url("/assets/rewind.png")
+
+.fastforward
+  background-image: url("/assets/fastforward.png")
+
+vg-play-pause:hover, vg-fullscreen:hover
+  background-color: #444444
+
+vg-track-selector
+  cursor: pointer
+
+.backToSearch
+  cursor: pointer
+  position: absolute
+  top: 0
+  right: 0
+  color: white
+  font-family: 'Open Sans'
+  font-size: 30px
+  padding: 20px
+  z-index: 500
+  &:hover
+    background-color: #3f3f3f
+
+.backToList
+  cursor: pointer
+  position: absolute
+  top: 0
+  left: 0
+  color: white
+  font-family: 'Open Sans'
+  padding: 20px
+  z-index: 500
+  .icon
+    float: left
+    width: 15px
+    height: 15px
+    margin-top: 20px
+    background-image: url("/assets/menu.png")
+    background-size: 100%
+  .text_wrapper
+    float: left
+    margin-left: 10px
+  .header
+    font-size: 20px
+  .subheader
+    font-size: 18px
+  &:hover
+    background-color: #3f3f3f

@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <vg-player (onPlayerReady)="onPlayerReady($event)">
+    <vg-overlay-play></vg-overlay-play>
+    <vg-buffering></vg-buffering>
+    <div class="backToList" *ngIf="subject && isFullscreen" (click)="exitFullscreen()">
+      <div class="icon"></div>
+      <div class="text_wrapper">
+        <div class="header">{{domain}}</div>
+        <div class="subheader">Section {{subject.branchIndex}}, Lecture {{subject.index}}</div>
+      </div>
+    </div>
+
+    <div class="backToSearch" routerLink="/">
+      Back to search
+    </div>
+
+    <vg-scrub-bar>
+      <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+      <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+    </vg-scrub-bar>
+
+    <vg-controls>
+      <div class="previous_video" (click)="previousVideo()"></div>
+      <div class="rewind" (click)="rewind()"></div>
+      <vg-play-pause></vg-play-pause>
+      <div class="fastforward" (click)="fastForward()"></div>
+      <div class="next_video" (click)="nextVideo()"></div>
+
+      <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+      <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+      <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+      <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+      <div class="resolution"></div>
+      <vg-track-selector></vg-track-selector>
+      <vg-mute></vg-mute>
+      <vg-volume></vg-volume>
+
+      <vg-fullscreen></vg-fullscreen>
+    </vg-controls>
+    <video [vgMedia]="media"
+           #media
+           id="media"
+           preload="auto"
+           crossorigin
+           [src]="currentVideo"
+           type="video/mp4">
+    </video>
+  </vg-player>
+</div>
