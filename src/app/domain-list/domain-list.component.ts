@@ -19,11 +19,12 @@ export class DomainListComponent implements OnInit {
   constructor(private subjectService: SubjectService, private changeDetector: ChangeDetectorRef, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.routeSub = this.route.params.subscribe(params => {
-      if (params["domain"]) {
-        this.subjectService.getBranches(params["domain"]);
-      }
-    });
+    // this.routeSub = this.route.params.subscribe(params => {
+    //   if (params["domain"]) {
+    //     this.subjectService.getBranches(params["domain"]);
+    //   }
+    // });
+    this.subjectService.getBranches("Math");
 
     this.branchSub = this.subjectService.branchesObs.subscribe(branches => {
       this.branches = branches;
@@ -39,7 +40,7 @@ export class DomainListComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.routeSub.unsubscribe();
+    //this.routeSub.unsubscribe();
     this.branchSub.unsubscribe();
   }
 }

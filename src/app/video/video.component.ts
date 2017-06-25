@@ -34,16 +34,17 @@ export class VideoComponent implements OnInit {
       });
     });
 
-    this.routeSub = this.route.params.subscribe(params => {
-      if (params["domain"]) {
-        this.domain = params["domain"];
-      }
-    });
+    this.domain = "Math";
+    // this.routeSub = this.route.params.subscribe(params => {
+    //   if (params["domain"]) {
+    //     this.domain = params["domain"];
+    //   }
+    // });
   }
 
   ngOnDestroy() {
     this.subjectSub.unsubscribe();
-    this.routeSub.unsubscribe();
+    //this.routeSub.unsubscribe();
     this.fsSub.unsubscribe();
   }
 

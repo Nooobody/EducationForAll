@@ -38,8 +38,8 @@ import { VgBufferingModule } from 'videogular2/buffering';
     VgOverlayPlayModule,
     VgBufferingModule,
     RouterModule.forRoot([
-      { path: '', component: SearchComponent },
-      { path: ':domain', component: VideoWrapperComponent }
+      // { path: '', component: SearchComponent },
+      { path: '', component: VideoWrapperComponent }
     ])
   ],
   providers: [
