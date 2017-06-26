@@ -82,7 +82,6 @@ export class VideoComponent implements OnInit {
 
     e.stopPropagation();
 
-    console.log(e);
     let y = ((200 - e.offsetY) / 200) * 100;
     this.volume = y;
     this.api.volume = this.volume / 100;
