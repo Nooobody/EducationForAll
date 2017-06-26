@@ -17,6 +17,9 @@ export class VideoComponent implements OnInit {
   private domain;
   private currentVideo = "";
   private isFullscreen = false;
+  private showVolume = false;
+  private volume = 100;
+  private dragging = false;
 
   private subjectSub;
   private routeSub;
@@ -62,6 +65,31 @@ export class VideoComponent implements OnInit {
     this.fsSub = this.api.fsAPI.onChangeFullscreen.subscribe(isFS => {
       this.isFullscreen = isFS;
     });
+  }
+
+  private startDrag() {
+    this.dragging = true;
+  }
+
+  private stopDrag() {
+    this.dragging = false;
+  }
+
+  private setVolume(e) {
+    if (!this.dragging) {
+      return
+    }
+
+    e.stopPropagation();
+
+    console.log(e);
+    let y = ((200 - e.offsetY) / 200) * 100;
+    this.volume = y;
+    this.api.volume = this.volume / 100;
+  }
+
+  private toggleVolume() {
+    this.showVolume = !this.showVolume;
   }
 
   private exitFullscreen() {

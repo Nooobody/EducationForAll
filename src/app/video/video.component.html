@@ -34,8 +34,10 @@
 
       <div class="resolution"></div>
       <vg-track-selector></vg-track-selector>
-      <vg-mute></vg-mute>
-      <vg-volume></vg-volume>
+      <div class="volume_btn" (click)="toggleVolume()"></div>
+      <div class="volume_slider" *ngIf="showVolume" (mousedown)="startDrag()" (mousemove)="setVolume($event)" (mouseup)="stopDrag()" (mouseleave)="stopDrag()" (click)="setVolume($event)">
+        <div class="volume_amount" [style.height]="volume + '%'"></div>
+      </div>
 
       <vg-fullscreen></vg-fullscreen>
     </vg-controls>

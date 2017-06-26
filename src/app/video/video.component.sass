@@ -1,4 +1,4 @@
-.previous_video, .next_video, .rewind, .fastforward
+.previous_video, .next_video, .rewind, .fastforward, .volume_btn
   width: 50px
   background-size: 50%
   background-position: 50%
@@ -6,6 +6,9 @@
   cursor: pointer
   &:hover
     background-color: #444444
+
+.volume_btn
+  background-image: url("/assets/volume.png")
 
 .previous_video
   background-image: url("/assets/back.png")
@@ -24,6 +27,32 @@ vg-play-pause:hover, vg-fullscreen:hover
 
 vg-track-selector
   cursor: pointer
+
+.volume_slider
+  position: absolute
+  bottom: 50px
+  right: 50px
+  height: 200px
+  width: 50px
+  background-color: #000000
+  border-top-right-radius: 5px
+  border-top-left-radius: 5px
+  -webkit-touch-callout: none
+  -webkit-user-select: non
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+.volume_amount
+  position: absolute
+  bottom: 0px
+  left: 5px
+  width: 40px
+  max-height: 195px
+  border-top-right-radius: 5px
+  border-top-left-radius: 5px
+  background-color: #24a829
+  pointer-events: none
 
 .backToSearch
   cursor: pointer
